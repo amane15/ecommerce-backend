@@ -10,6 +10,14 @@ const error = require("./middleware/error");
 const app = express();
 require("dotenv").config();
 
+if (!(process.env.MONGOURI && process.env.jwtPrivateKey)) {
+    console.log("ENV not set");
+    process.exit(1);
+}
+
+// MONGOURI=mongodb+srv://atul:Atulmane1599@ecommerce.lcpxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// jwtPrivateKey=jwtPrivateKey
+
 app.use(cors());
 app.use(express.json());
 app.use("/api/users", users);
@@ -24,6 +32,6 @@ mongoose
     .then(() => console.log("Connected to database"))
     .catch((e) => console.log("Error", e));
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log("Listening on port 3001");
 });
