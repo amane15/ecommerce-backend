@@ -15,9 +15,6 @@ if (!(process.env.MONGOURI && process.env.jwtPrivateKey)) {
     process.exit(1);
 }
 
-// MONGOURI=mongodb+srv://atul:Atulmane1599@ecommerce.lcpxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-// jwtPrivateKey=jwtPrivateKey
-
 app.use(cors());
 app.use(express.json());
 app.use("/api/users", users);
