@@ -10,10 +10,6 @@ const error = require("./middleware/error");
 const app = express();
 require("dotenv").config();
 
-if (!(process.env.MONGOURI && process.env.jwtPrivateKey)) {
-    console.log("ENV not set");
-    process.exit(1);
-}
 
 app.use(cors());
 app.use(express.json());
