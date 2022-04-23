@@ -4,12 +4,10 @@ const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
 router.post("/login", async (req, res) => {
-    console.log(req.body);
     const { error } = validateLogin(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
     let user = await User.findOne({ email: req.body.email });
-    console.log(user);
     if (!user) return res.status(400).send("Invalid username or password");
 
     const validPassword = await bcrypt.compare(

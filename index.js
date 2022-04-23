@@ -6,10 +6,11 @@ const auths = require("./routes/auth");
 const carts = require("./routes/cart");
 const products = require("./routes/products");
 const orders = require("./routes/orders");
+const wishlists = require("./routes/wishlist");
 const error = require("./middleware/error");
 const app = express();
 require("dotenv").config();
-
+//  MONGOURI=mongodb+srv://atul:Atulmane1599@ecommerce.lcpxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 app.use(cors());
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use("/api/auth", auths);
 app.use("/api/products", products);
 app.use("/api/cart", carts);
 app.use("/api/orders", orders);
+app.use("/api/wishlist", wishlists);
 app.use(error);
 
 mongoose

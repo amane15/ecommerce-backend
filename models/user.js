@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema(
         isAdmin: { type: Boolean, default: false },
         isSeller: { type: Boolean, default: false },
         cart: { type: Array },
+        wishlist: { type: Array },
         orders: { type: Array },
     },
     { timestamps: true }
