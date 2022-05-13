@@ -10,7 +10,6 @@ const wishlists = require("./routes/wishlist");
 const error = require("./middleware/error");
 const app = express();
 require("dotenv").config();
-//  MONGOURI=mongodb+srv://atul:Atulmane1599@ecommerce.lcpxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 app.use(cors());
 app.use(express.json());
