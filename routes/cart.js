@@ -28,7 +28,7 @@ router.post(
         const cart = new Cart(req.body);
         const user = await User.findById(req.user._id);
         user.cart.push(cart);
-        user.save();
+        await user.save();
         res.send("Item added to cart");
     })
 );
