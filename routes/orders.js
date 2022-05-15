@@ -8,7 +8,6 @@ router.get(
     auth,
     asyncMiddleware(async (req, res) => {
         const orders = await Order.find({ userId: req.user._id });
-        console.log(orders);
         res.send(orders);
     })
 );

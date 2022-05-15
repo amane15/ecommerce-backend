@@ -2,6 +2,7 @@ const router = require("express").Router();
 const auth = require("../middleware/auth");
 const { User } = require("../models/user");
 const { Cart } = require("../models/cart");
+const { Product } = require("../models/product");
 const asyncMiddleware = require("../middleware/async");
 
 router.get(
@@ -17,6 +18,13 @@ router.post(
     "/add",
     auth,
     asyncMiddleware(async (req, res) => {
+        const { productId } = req.body;
+        try {
+            const product = await Product.findById(productId);
+        } catch (ex) {
+            return res.send("The product with the given id does not exists");
+        }
+
         const cart = new Cart(req.body);
         const user = await User.findById(req.user._id);
         user.cart.push(cart);

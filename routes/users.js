@@ -18,7 +18,6 @@ router.put(
     auth,
     asyncMiddleware(async (req, res) => {
         const { name, phone, address } = req.body.user;
-        console.log(name, phone, address);
         const user = await User.findByIdAndUpdate(req.user._id, {
             name,
             phone,

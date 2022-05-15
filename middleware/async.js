@@ -3,6 +3,8 @@ module.exports = function (handler) {
         try {
             await handler(req, res);
         } catch (ex) {
+            // console.log("error middleware");
+            // console.log(ex);
             next(ex);
         }
     };
