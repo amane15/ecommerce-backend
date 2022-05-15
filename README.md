@@ -2,9 +2,9 @@
 
 ## URL = https://ecomapp-mern.herokuapp.com
 
-### Registration:
+## Registration:
 
-#### **POST** /api/users/register
+### **POST** /api/users/register
 
 > In the body you have to pass name, email, password. <br/>
 
@@ -16,9 +16,9 @@
 }
 ```
 
-### Authentication:
+## Authentication:
 
-#### POST /api/auth/login
+### POST /api/auth/login
 
 > In the body you have to pass email and password. <br/>
 
@@ -31,15 +31,15 @@
 
 > If email and password is right it will return JSON Web Token. <br/>
 
-### To test the following endpoints authentication is required.
+## To test the following endpoints authentication is required.
 
-### Once you receive JSON Web Token send that as header named as x-auth-header.
+## Once you receive JSON Web Token send that as header named as x-auth-header.
 
 ```
 x-auth-header: "YOU JSON Web Token"
 ```
 
-#### **PUT** /api/users/update
+### **PUT** /api/users/update
 
 > To update user information such as address, name and phone number. <br/> You cannot update email.
 
@@ -53,27 +53,27 @@ phone:      // 10 characters long
 
 ```
 
-### Products Endpoints:
+## Products Endpoints:
 
-#### **GET** /api/products
+### **GET** /api/products
 
 > Returns all the products.
 
-#### **GET** /api/products/id
+### **GET** /api/products/id
 
 > Returns product with the given id.
 
-#### **POST** /api/products/add
+### **POST** /api/products/add
 
 > As of now only admin is allowed to perform this request.
 
-### Cart Endpoints:
+## Cart Endpoints:
 
-#### **GET** /api/cart
+### **GET** /api/cart
 
 > Return all the products present in the cart.
 
-#### **POST** /api/cart/add
+### **POST** /api/cart/add
 
 > To add product in the cart.
 
@@ -86,7 +86,7 @@ phone:      // 10 characters long
 
 > As of now you have to pass quantity.
 
-#### **PUT** /api/cart/deleteProduct
+### **PUT** /api/cart/deleteProduct
 
 > To delete product with given id from the cart.
 
@@ -96,17 +96,17 @@ phone:      // 10 characters long
 }
 ```
 
-#### **PUT** /api/cart/empty
+### **PUT** /api/cart/empty
 
 > Remove all the products in the cart.
 
-### Wishlist Endpoints:
+## Wishlist Endpoints:
 
-#### **GET** /api/wishlist/
+### **GET** /api/wishlist/
 
 > Return all the products present in the wishlist
 
-#### **POST** /api/wishlist/add
+### **POST** /api/wishlist/add
 
 > To add product in the wishlist
 
@@ -126,8 +126,8 @@ phone:      // 10 characters long
 }
 ```
 
-### Orders Endpoint:
+## Orders Endpoint:
 
-#### **GET** /api/orders/
+### **GET** /api/orders/
 
 > Return all the orders.
