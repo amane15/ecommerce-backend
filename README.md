@@ -131,3 +131,5 @@ phone:      // 10 characters long
 ### **GET** /api/orders/
 
 > Return all the orders.
+
+## Contributing
